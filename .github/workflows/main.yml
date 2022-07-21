@@ -1,0 +1,22 @@
+name: create tag and release
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  create-tag-and-release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: create tag
+        run: |
+          git tag ${{ github.head_ref }}
+          git push origin ${{ github.head_ref }}
+      - name: create release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.head_ref }}
+          generate_release_notes: true
