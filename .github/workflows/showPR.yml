@@ -1,4 +1,4 @@
-name: show PR
+name: show PR2
 on:
   push:
     branches:
