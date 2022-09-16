@@ -16,5 +16,5 @@ jobs:
         run: |
           curl \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/kuroshima-akr/$REPO/pulls
+            https://api.github.com/repos/$REPO/pulls
  
