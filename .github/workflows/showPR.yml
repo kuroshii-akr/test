@@ -1,0 +1,12 @@
+name: show PR
+on:
+  push:
+    branches:
+      - main
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr list --repo $GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
