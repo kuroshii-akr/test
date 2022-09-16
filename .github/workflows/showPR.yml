@@ -10,3 +10,12 @@ jobs:
       - run: gh pr list --repo $GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - env:
+          REPO: ${{ github.repository }}
+        run: |
+          curl \
+            -X GET \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/$REPO/issues/$PR_NUMBER/comments \
+            https://api.github.com/repos/$REPO/kuroshima-akr/pulls \
+ 
