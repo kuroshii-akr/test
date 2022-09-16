@@ -15,7 +15,6 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           curl \
-            -H "Accept: application/vnd.github+json" \ 
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/kuroshima-akr/$REPO/pulls \
+            https://api.github.com/repos/kuroshima-akr/$REPO/pulls
  
