@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: escape validation
         run: |
-          HOGE=F22.8-20220915
+          HOGE=yyoyoyo
           HOGE=$(echo $HOGE|grep -o "^F[0-9]")
+          echo $HOGE
       - run: gh pr list --repo $GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
