@@ -8,7 +8,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - naem: escape validation
+      - name: escape validation
         run: |
           HOGE=F22.8-20220915
           echo $HOGE
