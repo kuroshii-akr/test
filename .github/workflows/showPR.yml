@@ -11,7 +11,7 @@ jobs:
       - name: escape validation
         run: |
           HOGE=F22.8-20220915
-          echo $HOGE
+          echo $HOGE|grep -o "^F"
       - run: gh pr list --repo $GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
