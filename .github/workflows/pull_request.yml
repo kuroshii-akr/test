@@ -12,7 +12,7 @@ jobs:
           set -eux
           data=$(cat "./test.json")
           new_data=$(echo "$data" | \
-            jq 'del(.record.releaseNotifiedUsers.value[] | select(.targets | contains(["${{ github.base_ref }}"]) | not))' |
+            jq 'del(.record.releaseNotifiedUsers.value[] | select(.targets | contains(["${{ github.base_ref }}"]) | not))' | \
             jq 'del(.record.releaseNotifiedUsers.value[].targets)' \
           )
           echo "$new_data" > "create-template-filtered.json"
