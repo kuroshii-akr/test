@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "I like cucumbers."
+      - uses: actions/checkout@v3
       - name: Test
         run: |
           set -eux
