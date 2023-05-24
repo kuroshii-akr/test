@@ -1,0 +1,18 @@
+name: Pull request workflow
+on:
+  pull_request:
+jobs:
+  pull-request-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I like cucumbers."
+      - uses: actions/checkout@v3
+      - name: Test
+        run: |
+          set -eux
+          data=$(cat "./test.json")
+          new_data=$(echo "$data" | \
+            jq 'del(.record.releaseNotifiedUsers.value[] | select(.targets | contains(["${{ github.base_ref }}"]) | not))' | \
+            jq 'del(.record.releaseNotifiedUsers.value[].targets)' \
+          )
+          echo "$new_data" > "create-template-filtered.json"
