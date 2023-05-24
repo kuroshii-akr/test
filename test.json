@@ -15,7 +15,7 @@
 		  {
 			"code": "user2",
 			"name": "USER2",
-			"targets": [ "main", "beta", "rc" ]
+			"targets": [ "beta", "rc" ]
 		  }
 		]
 	  }
