@@ -1,0 +1,23 @@
+{
+	"app": 21284,
+	"record": {
+	  "summary": {
+		"value": "waiwai"
+	  },
+	  "releaseNotifiedUsers": {
+		"type": "USER_SELECT",
+		"value": [
+		  {
+			"code": "user1",
+			"name": "USER1",
+			"targets": [ "main", "beta", "rc" ]
+		  },
+		  {
+			"code": "user2",
+			"name": "USER2",
+			"targets": [ "main", "beta", "rc" ]
+		  }
+		]
+	  }
+	}
+}
